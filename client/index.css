@@ -1,0 +1,317 @@
+:root {
+    --primary: #673ab7;
+    --primary-text: white;
+    --primary-light: #9a67ea;
+    --primary-light-text: black;
+    --primary-dark: #320b86;
+    --primary-dark-text: white;
+
+    --secondary: #455a64;
+    --secondary-text: white;
+    --secondary-light: #718792;
+    --secondary-light-text: black;
+    --secondary-dark: #1c313a;
+    --secondary-dark-text: white;
+
+    --background-dark: #E1E2E1;
+    --background-light: #F5F5F6;
+}
+
+.noscroll::-webkit-scrollbar {
+    display: none;
+}
+.noscroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+button:focus, input:focus, select:focus, textarea:focus {
+    outline: none;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+#title-bar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: var(--primary);
+    display: inline-block;
+    width: 100%;
+    height: 5%;
+    -webkit-box-shadow: 0px 0px 4px 0px #000000; 
+    box-shadow: 0px 0px 4px 0px #000000;
+    color: var(--primary-text);
+    font-family: Roboto;
+    z-index: 20;
+}
+
+#title {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+    display: inline-block;
+    vertical-align: middle;
+    width: fit-content;
+    padding-left: 32px;
+}
+#title .material-icons {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translate(0, -50%);
+}
+#title-node-name {
+    background-color: var(--primary-dark);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#network {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+}
+#network .material-icons {
+    position: absolute;
+    right: calc(100% + 10px);
+    top: 50%;
+    transform: translate(0, -50%);
+}
+#network-name {
+    background-color: var(--primary-dark);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#peers {
+    position: absolute;
+    top: 5%;
+    right: 0px;
+    display: inline-block;
+    width: 20%;
+    height: 95%;
+    background-color: var(--secondary);
+}
+
+#peers .peer {
+    padding: 5px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    width: 96%;
+    height: fit-content;
+    margin-left: 2%;
+    margin-top: 10px;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 4px -2px #000000; 
+    box-shadow: 0px 0px 4px -2px #000000;
+}
+#peers .peer .peer-name {
+    display: inline-block;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    font-family: Roboto;
+}
+#peers .peer .peer-connection {
+    position: relative;
+    display: inline-block;
+    width: calc(100% - 40px);
+    height: fit-content;
+    padding: 5px;
+    margin-left: 32px;
+    box-sizing: border-box;
+    background-color: var(--background-dark);
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+#peers .peer .peer-connection::selection {
+    background: rgba(0,0,0,0.15);
+}
+#peers .peer .peer-connection::-moz-selection {
+    background: rgba(0,0,0,0.15);
+}
+#peers .peer .peer-connection .material-icons {
+    position: absolute;
+    top: 50%;
+    right: calc(100% + 5px);
+    transform: translate(0, -50%);
+    color: var(--secondary-dark);
+}
+
+#folders {
+    position: absolute;
+    top: 5%;
+    left: 0px;
+    display: inline-block;
+    width: 80%;
+    height: 95%;
+    overflow-y: scroll;
+    z-index: 10
+}
+
+#add-folder {
+    z-index: 30;
+    position: absolute;
+    bottom: 2vh;
+    right: calc(20% + 2vh);
+    display: inline-block;
+    width: 54px;
+    height: 54px;
+    background-color: var(--primary);
+    transition: background-color 0.2s;
+    color: var(--primary-text);
+    border: none;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 4px 0px #000000; 
+    box-shadow: 0px 0px 4px 0px #000000;
+    cursor: pointer;
+}
+#add-folder:hover {
+    background-color: var(--primary-dark);
+}
+#add-folder .material-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#folders .folder-item {
+    position: relative;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: inline-block;
+    width: calc(98% - 68px);
+    height: fit-content;
+    background-color: var(--background-light);
+    border-radius: 5px;
+    padding: 5px;
+    -webkit-box-shadow: 0px 0px 4px -2px #000000; 
+    box-shadow: 0px 0px 4px -2px #000000;
+}
+#folders .folder-item .folder-title {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 25px;
+}
+#folders .folder-item .folder-buffer {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+    font-family: Roboto;
+}
+#folders .folder-item .folder-buffer .material-icons {
+    font-size: 16px;
+    vertical-align: top;
+}
+#folders .folder-item .folder-buffer .material-icons:last-of-type {
+    margin-left: 10px;
+    color: rgb(179, 30, 30);
+}
+#folders .folder-item .folder-buffer .material-icons:first-of-type {
+    color: #3d56a7;
+}
+#folders .folder-item .excluded-folders {
+    background-color: var(--background-dark);
+    font-family: monospace;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    height: fit-content;
+    width: calc(100% - 10px);
+    padding-bottom: 1px;
+}
+#folders .folder-item .excluded-folders .excluded-folder-item {
+    margin-bottom: 5px;
+    display: block;
+}
+#folders .folder-item .excluded-folders .excluded-folder-item button {
+    border: none;
+    background-color: #00000000;
+    font-family: monospace;
+    cursor: pointer;
+    color: red;
+}
+#folders .folder-item .excluded-folders .excluded-folder-item:first-of-type button {
+    color: black;
+    cursor: default;
+}
+#folders .folder-item .excluded-folders .excluded-folder-item.new-item button {
+    color: green;
+    vertical-align: top;
+    margin-top: 2px;
+    cursor: pointer;
+}
+#folders .folder-item .excluded-folders .excluded-folder-item span::selection {
+    background: rgba(0,0,0,0.15);
+}
+#folders .folder-item .excluded-folders .excluded-folder-item span::-moz-selection {
+    background: rgba(0,0,0,0.15);
+}
+#folders .folder-item .excluded-folders .excluded-folder-item.new-item input {
+    border: none;
+    background-color: #00000000;
+    transition: background-color 0.2s;
+    padding: 4px;
+    border-radius: 4px;
+    display: inline-block;
+    width: 60%;
+}
+#folders .folder-item .excluded-folders .excluded-folder-item.new-item input:focus {
+    background-color: #0000000e;
+}
+
+#folders .folder-item .top-button {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    height: 20px;
+    width: 20px;
+    border: none;
+    background-color: #00000000;
+    margin-right: 5px;
+    transition: background-color 0.2s, width 0.2s;
+    cursor: pointer;
+    vertical-align: top;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#folders .folder-item .top-button .material-icons {
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translate(0, -50%);
+}
+#folders .folder-item .top-button:hover {
+    background-color: #0000001e;
+    width: 120px;
+}
+#folders .folder-item .top-button span:last-child {
+    position: relative;
+    margin-left: 20px;
+    font-family: Roboto;
+    font-size: 12px;
+}

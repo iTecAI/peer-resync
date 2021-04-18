@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="dashboard/index.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+        <script src="dashboard/index.js"></script>
+        <link rel="shortcut icon" type="image/jpg" href="dashboard/favicon.ico"/>
+    </head>
+    <body>
+        <div id='title-bar'>
+            <span id='title'><span class="material-icons noselect">folder_shared</span><span class='noselect'>Dashboard - </span><span id='title-node-name'></span></span>
+            <span id='network'><span class="material-icons noselect">wifi</span><span id='network-name'></span></span>
+        </div>
+        <div id='peers'>
+
+        </div>
+        <div id='folders' class='noscroll'>
+
+        </div>
+        <button id='add-folder'>
+            <span class="material-icons">create_new_folder</span>
+        </button>
+    </body>
+</html>
